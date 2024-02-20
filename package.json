@@ -6,18 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "prettier --check .",
     "prettier": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "prettier --write . && git add -A ."
     }
-  },
-  "lint-staged": {
-    "*": "prettier --write"
   },
   "dependencies": {
     "eslint-config-prettier": "^9.1.0",
